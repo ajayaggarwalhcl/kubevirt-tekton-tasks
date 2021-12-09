@@ -3,6 +3,8 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   generateName: server-deployer-run-
+  annotation:
+   argocd.argoproj.io/hook: Sync
 spec:
   pipelineRef:
     name: server-deployer
