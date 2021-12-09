@@ -13,6 +13,8 @@ spec:
             kind: DataVolume
             metadata:
               generateName: flasker-server-
+              annotations:
+               argocd.argoproj.io/hook: Sync
             spec:
               pvc:
                 accessModes:
