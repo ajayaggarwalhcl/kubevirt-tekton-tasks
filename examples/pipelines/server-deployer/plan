@@ -1,0 +1,28 @@
+apiVersion: forklift.konveyor.io/v1alpha1
+kind: Plan
+metadata:
+  name: vmargo
+  namespace: openshift-rhmtv
+spec:
+  description: ""
+  map:
+    datastores:
+    - destination:
+        storageClass: nfs-client
+      source:
+        id: datastore-13
+    networks:
+    - destination:
+        type: pod
+      source:
+        id: network-14
+  provider:
+    destination:
+      name: host
+      namespace: openshift-rhmtv
+    source:
+      name: vmware
+      namespace: openshift-rhmtv
+  targetNamespace: argocd
+  vms:
+  - id: vm-21
